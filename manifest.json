@@ -1,8 +1,8 @@
 {
   "short_name": "Flashy",
   "name": "Create engaging icons for your product hunt launch",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/flashy/",
+  "start_url": "/flashy/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
