@@ -1,5 +1,5 @@
 # Flashy V1.0
-Create engaging icons for your product hunt launch
+The easiest way to create Gif's for your product launches
 
 
 # Source code comingsoon!
