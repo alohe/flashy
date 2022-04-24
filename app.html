@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="assets/imgs/browser.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name='robots' content='max-image-preview:large' />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Create engaging icons for your product hunt launch" />
+    <title>App</title>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://alohe.github.io/flashy/app" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Flashy" />
+    <meta property="og:description" content="Create engaging icons for your product hunt launch" />
+    <meta property="og:url" content="https://alohe.github.io/flashy/app" />
+    <meta property="og:site_name" content="Flashy" />
+    <meta property="article:modified_time" content="2021-06-17T12:20:43+00:00" />
+    <meta property="og:image" content="https://alohe.github.io/flashy/assets/imgs/browser.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:label1" content="Made by" />
+    <meta name="twitter:data1" content="Alohe" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
+
+    <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:100,200,300,400,500,600,700,800,900" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:100,200,300,400,500,600,700,800,900" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+<body>
+
+  <!-- mobile header -->
+  <header class="container header mobile">
+    <h2 class="h1">
+      Flashy <span class="badge ms-1">Version 2.0</span>
+    </h2>
+    <p class="desc">
+      🥺 Flashy is not optimized for mobile, if there is demand and you feel the need to use this application on mobile let me know and i'll try to work on it. 
+    </p>
+  </header>
+
+  <!-- Play window -->
+  <main>
+    <div class="main-container edit">
+      <div id="mainImgContainer" class="image-container  ms-auto me-auto" >
+        <div class="image"
+          id="animeImg"
+          style="background-image: url('./assets/imgs/xsullo.jpg');">
+        </div>
+        <h2 id="animeText" class="image-text"
+        ondblclick="editTextClick()"
+          style="color: white; font-size: 50px; font-weight: 700; text-shadow: 0 0 40px black; " contenteditable="true">
+          @xsullo
+        </h2>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Control buttons  -->
+  <button class="showControls show" id="showBtn" onclick="toggleControls()">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+
+  <button class="play-btn fixed-btn" onclick="start()" hidden>
+    <i class="fa fa-pause"></i>
+  </button>
+
+  <button class="play-btn fixed-btn" onclick="start()" hidden>
+    <i class="fa fa-play"></i>
+  </button>
+
+
+  <!-- Play windows controls -->
+  <div class="controls show" id="controls">
+    <!-- hide controls btn -->
+    <button class="showControls" onclick="toggleControls()" id="hideBtn">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+
+    <h2 class="h2">
+      Flashy<sup class="badge ms-1">Version 2.0</sup>
+    </h2>
+    
+    <!-- Play windows controls -->
+    <div class="ver-top mt-3">
+      <div>
+        <label class=" label">Width</label>
+        <input id="mainWidth" type="number" value="400" />
+      </div>
+
+      <div>
+        <label class=" label">Height</label>
+        <input id="mainHeight" type="number" value="400" />
+      </div>
+
+      <!-- Override all image's delay and font-size -->
+      <div>
+        <label class="label">Delay</label>
+        <input id="overRideDelay" type="number" value="500" title="Reset the delay value for all images" />
+      </div>
+
+      <div>
+        <label class="label">Font size</label>
+        <input id="overRideFontSize" type="number" value="400" title="Reset the font size for all images" />
+      </div>
+    </div>
+
+    <!-- Add image from url -->
+    <div class="ms-2 me-2 mt-1 url-input-container">
+      <label class="label">Add image from URL</label>
+      <input id="urlInput" type="text" placeholder="Paste in image url" />
+      <button class="add-btn" onclick="urlImageUpload()"><i class="fa fa-plus"></i></button>
+    </div>
+
+    <!-- Add Image from file -->
+    <div class="ver mt-3 me-1">
+      <label class="image-select-btn" htmlFor="myfileselector">
+        <input id="myfileselector" onchange="handleImage(this.files)" type="file" accept="image/*" multiple hidden />
+        <i class="fa fa-cloud-upload-alt me-1"></i>
+        Add images
+      </label>
+      <button class="primary-btn ms-2" id="linkBtn" onclick="addUrlImageBtn()"><i class="fa fa-link"></i></button>
+    </div>
+
+    <!-- Images -->
+    <div class="images mt-4" id="mainImagesContainer" hidden>
+      <div class="ver">
+        <h2 class="title">Images</h2>
+        <!-- Play controls -->
+        <div>
+          <button class="play-btn pc" onclick="start()" hidden>
+            <i class="fa fa-play"></i>
+          </button>
+
+          <button class="clear-btn pc ms-2" id="clearBtn" onclick="clearImages()" hidden>
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- image thumbnails container -->
+      <div class="image-components row" id="images">
+        <!-- Thumbnails gets displayed here -->
+      </div>
+    </div>
+    <!-- credits  -->
+    <div class="credits text-center" hidden>
+      <a href="https://www.producthunt.com/posts/flashy-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-flashy&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=304360&theme=light" alt="Flashy - The&#0032;easiest&#0032;way&#0032;to&#0032;create&#0032;Gif&#0039;s&#0032;for&#0032;your&#0032;product&#0032;launches | Product Hunt" style="width: 100%; height: 35px;" /></a>
+      <div class="socials mt-2">
+        <a href="https://twitter.com/alemalohe" target="_blank" class="text-dark">
+          <button><i class="fab fa-github"></i></button>
+        </a>
+        <a href="https://twitter.com/alemalohe" target="_blank" class="text-dark">
+          <button><i class="fab fa-twitter"></i></button>
+        </a>
+      </div>
+      <small class="made-by ml-auto mr-auto">Made with <font class="heart">❤️</font> by <font class="bold">Alohe</font></small>
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <!-- close editor -->
+  <div class="background" onclick="hideEditor()" id="editorBackground" hidden></div>
+  <!-- editor popup -->
+  <div class="editor" hidden>
+    <div class="ver-top">
+      <div>
+        <div class="img" id="currentEditImage" style="background-image: url('https://pbs.twimg.com/media/EjFY2fCWsAI_gNF.jpg'); width: 80px;"></div>
+      </div>
+      <div>
+        <label class="label">Content</label>
+        <input id="currentText" type="text" value="" placeholder="Add text" />
+      </div>
+    </div>
+    <div class="ver-top">
+
+      <div>
+        <label class="label">Font size</label>
+        <input id="currentFontSize" type="number" value="400" />
+      </div>
+      
+      <div>
+        <label class="label">Font Weight</label>
+        <select id="currentFontWeight" type="select" value="600" title="Reset the font size for all images">
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+          <option value="400">400</option>
+          <option value="500">500</option>
+          <option value="600">600</option>
+          <option value="700">700</option>
+          <option value="800">800</option>
+          <option value="900">900</option>
+        </select>
+      </div>
+
+      <div >
+        <label class="label">Color</label>
+        <input id="currentColor" type="color" value="#ffffff" />
+      </div>
+
+      <div >
+        <label class="label">Shadow</label>
+        <input id="currentShadowColor" type="color" value="#000000" title="Reset the font size for all images"/>
+      </div>
+    </div>
+
+    <div class="ver-select ms-2 me-2">
+      <div class="me-3">
+        <label class="label mb-2">Align</label>
+        <div class="ver options">
+          <button class="select-btn text-alignment-btn left" onclick="textAlignment(this)" value="left"><i class="fa fa-align-left"></i></button>
+          <button class="select-btn text-alignment-btn center" onclick="textAlignment(this)" value="center"><i class="fa fa-align-center"></i></button>
+          <button class="select-btn text-alignment-btn right" onclick="textAlignment(this)" value="right"><i class="fa fa-align-right"></i></button>
+        </div>
+     </div>
+
+      <div >
+        <label class="label">Shadow Value</label>
+        <input id="currentShadowValue"  type="range" min="0" value="100" max="100"
+          title="Reset the font size for all images" step="1" />
+      </div>
+    </div>
+
+    <div class="ver ms-2 me-3">
+      <div class="number-label col-lg-4">
+          <label class="label">Delay</label>
+          <input id="currentDelay" type="number" value="500" />
+          <div class="inner-label">ms</div>
+      </div>
+
+      <div class="ms-3 number-label-long  mt-2">
+        <div class="ver">
+          <label class="label me-2" for="currentRotationInput">Rotation</label>
+          <input id="currentRotationInput" type="number" value="0" />
+        </div>
+        <input id="currentRotation" class="mt-1" type="range" min="0" value="0" max="360" step="1" />
+      </div>
+    </div>
+    
+    <button class="remove-btn" id="removeCurrentImage"><i class="fa fa-trash"></i> &nbsp;Delete Image</button>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
