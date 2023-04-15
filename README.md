@@ -1,5 +1,5 @@
 # Flashy
-![Demo](https://media3.giphy.com/media/LdPBBN7RCWRzz4InTS/giphy.gif)
+<img src="https://media3.giphy.com/media/LdPBBN7RCWRzz4InTS/giphy.gif" alt="Flashy Demo" width="50%" />
 <br>
 Flashy is a web-based tool that can help you cycle through images while adding text to them.
 
