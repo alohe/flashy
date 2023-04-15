@@ -55,11 +55,11 @@ p {
   margin-top: 20px;
 }
 .h1 {
-  font-family: Poppins;
+  font-family: "Space Grotesk";
   font-size: 40px;
   padding-top: 20px;
   font-weight: 700;
-  animation: 3s changecolors infinite;
+  /* animation: 3s changecolors infinite; */
 }
 .h1 i {
   display: none;
@@ -157,7 +157,7 @@ p {
 }
 .controls .h2 {
   font-weight: 800;
-  font-family: "Inter";
+  font-family: "Unbounded";
   margin-bottom: 0;
   font-size: 30px;
 }
@@ -612,7 +612,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 40px;
   border: none;
   border-radius: 50px;
-  font-family: Poppins;
+  font-family: "Space Grotesk";
   font-size: 13.5px;
   font-weight: 900;
   transition: 0.3s;

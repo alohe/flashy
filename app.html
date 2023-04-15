@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-YNERWEYRNZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-YNERWEYRNZ");
-    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="assets/imgs/browser.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,13 +79,39 @@
       href="https://fonts.googleapis.com/css?family=Space+Grotesk:100,200,300,400,500,600,700,800,900"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Unbounded:100,200,300,400,500,600,700,800,900"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YNERWEYRNZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YNERWEYRNZ");
+      // page view
+      gtag("event", "page_view", {
+        page_title: "Flashy",
+        page_location: "https://alohe.github.io/flashy",
+        page_path: "/flashy",
+      });
+    </script>
   </head>
   <body>
     <!-- mobile header -->
     <header class="container header mobile">
-      <h2 class="h1">Flashy <span class="badge ms-1">Version 2.0</span></h2>
+      <h2 class="h1">Flashy <span class="badge ms-1">2.0</span></h2>
       <p class="desc">
         🥺 Flashy is not optimized for mobile, if there is demand and you feel
         the need to use this application on mobile let me know and i'll try to
@@ -154,7 +166,7 @@
         <i class="fa fa-chevron-left"></i>
       </button>
 
-      <h2 class="h2">Flashy<sup class="badge ms-1">Version 2.0</sup></h2>
+      <h2 class="h2">Flashy</h2>
 
       <!-- Play windows controls -->
       <div class="ver-top mt-3">
@@ -450,5 +462,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alohe/made-with-love/src/made-with-love.min.js"
+      tagText="Made with ❤️ by Alohe"
+      tagLink="https://twitter.com/alemalohe"
+      tagPosition="bottom-left"
+    ></script>
   </body>
 </html>

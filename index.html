@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-YNERWEYRNZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-YNERWEYRNZ");
-    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="assets/imgs/browser.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -78,6 +64,11 @@
     />
     <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Unbounded:100,200,300,400,500,600,700,800,900"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Heebo:100,200,300,400,500,600,700,800,900"
       crossorigin="anonymous"
     />
@@ -98,16 +89,38 @@
     />
 
     <link rel="stylesheet" href="assets/css/landing.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YNERWEYRNZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YNERWEYRNZ");
+      // page view
+      gtag("event", "page_view", {
+        page_title: "Flashy",
+        page_location: "https://alohe.github.io/flashy",
+        page_path: "/flashy",
+      });
+    </script>
   </head>
   <body>
     <main class="col-lg-7 ms-auto me-auto main">
       <div class="main text-center">
-        <h1 class="logo main-mt">
-          Flashy <sup class="badge">Version 2.0</sup>
-        </h1>
+        <div class="logo main-mt">
+          <h1 class="">Flashy</h1>
+          <span class="badge">2.0</span>
+        </div>
         <h1 class="title mt-4 mb-4">
           Turn your images into a
-          <span class="pulse">frame by frame</span> animation
+          <span class="">frame by frame</span> animation
           <img
             hidden
             class="pop"
@@ -115,7 +128,7 @@
             alt=""
           />
         </h1>
-        <a href="/flashy/app">
+        <a href="/flashy/app.html">
           <button class="btn btn-purple">Start Creating</button>
         </a>
 
@@ -132,152 +145,134 @@
             onmouseover="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/notion.gif'"
             onmouseout="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/notion.png'"
           />
-          <img
-            class="demo img3"
-            src="https://alohe.github.io/flashy/assets/imgs/demos/craftworks.png"
-            onmouseover="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/craftworks.gif'"
-            onmouseout="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/craftworks.png'"
-          />
-          <img
-            class="demo img4"
-            src="https://alohe.github.io/flashy/assets/imgs/demos/slack.png"
-            onmouseover="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/slack.gif'"
-            onmouseout="this.src = 'https://alohe.github.io/flashy/assets/imgs/demos/slack.png'"
-          />
         </div>
-      </div>
-
-      <div class="examples row">
-        <div class="col-lg-12 text-center mb-4">
-          <h3 class="bold">Some Examples</h3>
-        </div>
-
-        <div class="compare col-lg-3 ver">
-          <div class="before">
-            <p>Before</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/notion.png"
-              alt=""
-            />
-          </div>
-          <div class="after">
-            <p>After</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/notion.gif"
-              alt=""
-            />
-          </div>
-        </div>
-
-        <div class="compare col-lg-3 ver">
-          <div class="before">
-            <p>Before</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/dribbble.png"
-              alt=""
-            />
-          </div>
-          <div class="after">
-            <p>After</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/dribbble.gif"
-              alt=""
-            />
-          </div>
-        </div>
-
-        <div class="compare col-lg-3 ver">
-          <div class="before">
-            <p>Before</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/craftworks.png"
-              alt=""
-            />
-          </div>
-          <div class="after">
-            <p>After</p>
-            <img
-              src="https://alohe.github.io/flashy/assets/imgs/demos/craftworks.gif"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="video">
-        <iframe
-          class="framer"
-          src="https://www.youtube.com/embed/tEEPPOGvtOg"
-          title="YouTube video player"
-          allow="picture-in-picture"
-          allowfullscreen="true"
-        ></iframe>
       </div>
     </main>
 
-    <div class="features container">
-      <div class="row inner">
-        <div class="col-lg-7 mobile">
+    <div class="preview" id="Preview">
+      <img
+        class="preview__img img-fluid"
+        id="PreviewImage"
+        src="./assets/imgs/preview.png"
+        alt=""
+      />
+    </div>
+
+    <div class="examples row">
+      <div class="col-lg-12 text-center mb-4">
+        <h3 class="bold">Some Examples</h3>
+      </div>
+
+      <div class="compare col-lg-3 ver">
+        <div class="before">
+          <p>Before</p>
           <img
-            src="assets/imgs/easy.png"
-            class="img-fluid"
+            src="https://alohe.github.io/flashy/assets/imgs/demos/notion.png"
             alt=""
-            draggable="false"
           />
         </div>
-        <div class="col-lg-5 me-auto text">
-          <h1 class="title t-purple">Fast & Easy</h1>
-          <p class="desc">Just add your images and press play thats it</p>
-        </div>
-        <div class="col-lg-7 pc">
-          <img src="assets/imgs/easy.png" class="img-fluid" alt="" />
+        <div class="after">
+          <p>After</p>
+          <img
+            src="https://alohe.github.io/flashy/assets/imgs/demos/notion.gif"
+            alt=""
+          />
         </div>
       </div>
 
-      <div class="row inner">
-        <div class="col-lg-5">
+      <div class="compare col-lg-3 ver">
+        <div class="before">
+          <p>Before</p>
           <img
-            src="assets/imgs/editor.png"
-            class="img-fluid"
-            alt="flashy editor"
+            src="https://alohe.github.io/flashy/assets/imgs/demos/dribbble.png"
+            alt=""
           />
         </div>
-        <div class="col-lg-6 text-2">
-          <h1 class="title t-pink">
-            <font class="t-orange">Total control</font>
-          </h1>
-          <p class="desc">
-            Add text, change its size, weight, alignment, shadow, color,
-            duration, rotation and position by dragging the text
+        <div class="after">
+          <p>After</p>
+          <img
+            src="https://alohe.github.io/flashy/assets/imgs/demos/dribbble.gif"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="compare col-lg-3 ver">
+        <div class="before">
+          <p>Before</p>
+          <img
+            src="https://alohe.github.io/flashy/assets/imgs/demos/craftworks.png"
+            alt=""
+          />
+        </div>
+        <div class="after">
+          <p>After</p>
+          <img
+            src="https://alohe.github.io/flashy/assets/imgs/demos/craftworks.gif"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="features container" id="FeatureOne">
+      <div class="feature__section reverse feature__one__class">
+        <div class="feature__content">
+          <h2>Fast & Easy Animation</h2>
+          <p>
+            With our simple and intuitive tool, you can turn your images into
+            frame-by-frame animations quickly and easily. Here are some of the
+            features that make it so easy
           </p>
         </div>
+        <div class="feature__image">
+          <img src="assets/imgs/easy.png" alt="product" />
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-12 text-center ms-auto me-auto follow-me">
-          <h5 class="">
-            Working on adding more features to this project such as Export to
-            video, so stay in touch. <br />If you have feature requests feel
-            free to let me know on one of these 👇
-          </h5>
+      <div class="feature__section">
+        <div class="feature__image">
+          <img src="assets/imgs/editor.png" alt="product" />
         </div>
+        <div class="feature__content">
+          <h2>Total Control</h2>
+          <p>
+            With our animation creation tool, you have complete control over
+            every aspect of your animation. Here are some of the ways you can
+            customize your animation:
+          </p>
+          <ul class="mb-2 list">
+            <li class="mb-2">
+              User-Friendly Interface: Our easy-to-use interface makes it simple
+              to upload your images, adjust the settings, and create your
+              animation.
+            </li>
+            <li class="mb-2">
+              Simple Controls: With just a few clicks, you can add your images
+              and watch your animation come to life.
+            </li>
+            <li class="mb-2">
+              Customizable Text: Add text to your animation and customize it
+              with different fonts, sizes, colors, and more.
+            </li>
+            <li class="mb-2">
+              Frame-by-Frame Control: Get granular control over every aspect of
+              your animation by adjusting each frame individually.
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="col-lg-6 text-center ms-auto me-auto support">
-          <a href="https://www.producthunt.com/@alem_alohe" target="_blank">
-            <button class="btn btn-ph mt-2">
-              <i class="fab fa-product-hunt"></i>
-            </button>
-          </a>
-          <a href="https://twitter.com/alemalohe" target="_blank">
-            <button class="btn btn-tw ms-2 mt-2">
-              <i class="fab fa-twitter"></i>
-            </button>
-          </a>
-          <a href="https://github.com/alohe/flashy" target="_blank">
-            <button class="btn btn-gh ms-2 mt-2">
-              <i class="fab fa-github"></i>
-            </button>
-          </a>
+      <!-- cta centered -->
+      <div class="cta">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h1 class="title t-purple">Ready to get started?</h1>
+            <p class="desc">Create your first animation in just a few clicks</p>
+            <a href="/flashy/app.html">
+              <button class="btn btn-purple mt-3">Get Started</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -286,6 +281,7 @@
       <div class="ver">
         <p>
           <a href="https://alohe.github.io" target="_blank">
+            Designed and built by
             <img
               class="img me-1"
               src="https://avatars.githubusercontent.com/u/50866431?s=400&u=09fadbe1ecdb2f909b6dda7aa36d034e93c4878d&v=4"
@@ -302,6 +298,38 @@
     <script>
       let year = new Date().getFullYear();
       document.querySelector("#year").innerHTML = year;
+    </script>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js"
+      integrity="sha512-t4NGjfaRaGCjmiTGBsiG3w8FCp8ZY7dPlwZAXfeoGPARUT/rt3OP0NpQkblSgZy/2R8vPTXiEcq/zcWIJ8NusQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+      if (width > 768) {
+        ScrollTrigger.create({
+          trigger: "#Preview",
+          start: "top 50%+=500px",
+          endTrigger: "#FeatureOne",
+          end: "bottom 50%+=100px",
+          onUpdate: (self) => {
+            let element = document.querySelector("#Preview");
+
+            gsap.to(".preview__img", {
+              duration: 1,
+              // scale: self.progress.toFixed(1) * 2,
+              skewZ: self.progress.toFixed(3) * 100,
+              y: self.progress.toFixed(3) * 300,
+              ease: "power3.out",
+            });
+          },
+        });
+      }
     </script>
   </body>
 </html>
