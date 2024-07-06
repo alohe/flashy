@@ -85,6 +85,7 @@ p {
   font-size: 50px;
   line-height: 50px;
   text-transform: capitalize;
+  letter-spacing: 1px;
 }
 .main .desc {
   font-family: "Inter";
@@ -185,8 +186,11 @@ p {
   padding: 20px 100px;
   margin-top: 20px;
 }
+
 .preview img {
   border-radius: 20px;
+  border: solid 2px #dbdbdb5d;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.032);
 }
 
 /* 
@@ -387,6 +391,7 @@ p {
   }
   .preview {
     padding: 0;
+    border: solid 2px #fafafa;
   }
   .preview__img {
     width: 100%;
